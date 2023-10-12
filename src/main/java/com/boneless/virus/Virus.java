@@ -1,6 +1,7 @@
 package src.main.java.com.boneless.virus;
 
 import java.awt.Font;
+import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -34,12 +35,14 @@ public class Virus {
         mainWindow.add(mainText);
         mainWindow.setResizable(false);
         mainWindow.setTitle(":)");
+        mainWindow.getContentPane().setBackground(Color.GREEN);
 
         mainWindow.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         mainWindow.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 try {
+                    // Replace with the actual path to your audio file
                     File audioFile = new File("src/main/resources/assets/funni.wav");
                     AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
                     Clip clip = AudioSystem.getClip();
